@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Travonté's Website</title>
+    <title>Zhen's Anime list</title>
 </head>
 <body>
     <h1><strong>Anime</strong><h1>
