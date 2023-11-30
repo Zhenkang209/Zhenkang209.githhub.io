@@ -14,14 +14,14 @@ function new_function()
 }
 
 function moo() {
-    var textInput = document.getElementById("textInput");
-    var text = textInput.value;
-    textInput.value = text.toUpperCase();
-    var sentences = text.split(". ");
+   var inputValue = document.getElementById("text").value;
+    var sentences = inputValue.split('.');
     for (var i = 0; i < sentences.length; i++) {
-        var words = sentences[i].split(" ");
-        words[words.length - 1] += "-Moo";
-        sentences[i] = words.join(" ");
+        sentences[i] = sentences[i].toUpperCase().trim();
+        if (i < sentences.length - 1) {
+            sentences[i] += ". -Moo";
+        }
     }
-    textInput.value = sentences.join(". ");
+    var modifiedText = sentences.join("");
+    document.getElementById("text").value = modifiedText;
 }
