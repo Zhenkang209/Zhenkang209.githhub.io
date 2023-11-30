@@ -13,7 +13,7 @@ function new_function()
 	}
 }
 
-function makeMoo() {
+function moo() {
     var textInput = document.getElementById("textInput");
     var text = textInput.value;
     textInput.value = text.toUpperCase();
