@@ -14,12 +14,16 @@ function new_function()
 	}
 }
 
-function moo()
-{
-	var text=document.getElementById("text_id").value;
-	var uppercase_text=text.toUpperCase();
-	var split_text=uppercase_text.split(".");
-	suffixed_text=split_text.join("_Moo");
-	document.getElementById("text_id").value=suffixed_text;
+function makeMoo() {
+    var textInput = document.getElementById("textInput");
+    var text = textInput.value;
+    textInput.value = text.toUpperCase();
+    var sentences = text.split(". ");
+    for (var i = 0; i < sentences.length; i++) {
+        var words = sentences[i].split(" ");
+        words[words.length - 1] += "-Moo";
+        sentences[i] = words.join(" ");
+    }
+    textInput.value = sentences.join(". ");
 }
 </script>
