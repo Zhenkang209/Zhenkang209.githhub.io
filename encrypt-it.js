@@ -6,6 +6,15 @@ console.log("Windows loaded!");
 function myFunction()
 {
     document.getElementById("Windows Loaded!").innerHTML="Paragraph Changed.";
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    var newalpha="";
+    function shift(n)
+    {
+        for(let i-0;i<alphabet.length;i++)
+    {
+    let offset=(i+n)%alphabet.length;
+    newalpha+=alphabet[offset];
+}
 }
 </script>
 </head>
@@ -16,14 +25,4 @@ function myFunction()
 </body>
 </html>
 
-//Implementing a basic shift cipher
-var alphabet = "abcdefghijklmnopqrstuvwxyz";
-var newalpha="";
-function shift(n)
-{
-    for(let i-0;i<alphabet.length;i++)
-{
-let offset=(i+n)%alphabet.length;
-newalpha+=alphabet[offset];
-}
 
