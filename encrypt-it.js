@@ -23,18 +23,18 @@ window.addEventListener("load", function () {
   }
 
   function shiftCipher(text) {
-  const shiftAmount = 3;
-
+  text = text.toLowerCase();
   let result = "";
   for (let i = 0; i < text.length; i++) {
-    let charCode = text.charCodeAt(i);
-
-    if (charCode >= 65 && charCode <= 90) {
-      charCode = ((charCode - 65 + shiftAmount) % 26) + 65;
-    } else if (charCode >= 97 && charCode <= 122) {
-      charCode = ((charCode - 97 + shiftAmount) % 26) + 97;
+    if (text[i] < 'a' || text[i] > 'z') {
+      result += text[i];
+    } else if (text[i] == 'z') {
+      result += 'a';
+    } else { // letter is between 'a' and 'y'
+      let letter = text.charCodeAt(i);
+      let resultLetter = String.fromCharCode(letter + 1);
+      result += resultLetter;
     }
-    result += String.fromCharCode(charCode);
   }
   return result;
 }
