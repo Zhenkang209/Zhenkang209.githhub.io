@@ -1,26 +1,28 @@
-/*
- * Starter file 
- */
-(function() {
-  "use strict";
+console.log("Windows loaded!");
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction()
+{
+    document.getElementById("Windows Loaded!").innerHTML="Paragraph Changed.";
+}
+</script>
+</head>
+<body>
+<h2> Javascript in head </h2>
+<p id="Windows Loaded"> A Paragraph</p>
+<button type="button" onclick="myFunction()">Tryit </button>
+</body>
+</html>
 
-  /**
-   * The starting point in our program, setting up a listener
-   * for the "load" event on the window, signalling the HTML DOM has been constructed
-   * on the page. When this event occurs, the attached function (init) will be called.
-   */
-  window.addEventListener("load", init);
-
-  /**
-   * TODO: Write a function comment using JSDoc.
-   */
-  function init() {
-    // Note: In this function, we usually want to set up our event handlers
-    // for UI elements on the page.
-  }
-
-  // Add any other functions in this area (you should not implement your
-  // entire program in the init function, for similar reasons that
-  // you shouldn't write an entire Java program in the main method).
-
-})();
+//Implementing a basic shift cipher
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var newalpha="";
+function shift(n)
+{
+    for(let i-0;i<alphabet.length;i++)
+{
+let offset=(i+n)%alphabet.length;
+newalpha+=alphabet[offset];
+}
