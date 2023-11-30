@@ -7,6 +7,14 @@ function myFunction()
 {
     document.getElementById("Windows Loaded!").innerHTML="Paragraph Changed.";
 }
+</script>
+</head>
+<body>
+<h2> Javascript in head </h2>
+<p id="Windows Loaded"> A Paragraph</p>
+<button type="button" onclick="myFunction()">Tryit </button>
+</body>
+</html>
 
 //Implementing a basic shift cipher
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -18,12 +26,4 @@ function shift(n)
 let offset=(i+n)%alphabet.length;
 newalpha+=alphabet[offset];
 }
-</script>
-</head>
-<body>
-<h2> Javascript in head </h2>
-<p id="Windows Loaded"> A Paragraph</p>
-<button type="button" onclick="myFunction()">Tryit </button>
-</body>
-</html>
 
