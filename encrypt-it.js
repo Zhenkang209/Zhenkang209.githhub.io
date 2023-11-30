@@ -1,38 +1,58 @@
-// Function to handle encryption using shift cipher
+// Part I:
+window.addEventListener("load", function () {
+  console.log("Window loaded!");
+});
+// Part II:
+function handleClick() {
+  console.log("Button clicked!");
+}
+window.addEventListener("load", function () {
+  const encryptButton = document.getElementById("encrypt-it");
+  encryptButton.addEventListener("click", handleClick);
+});
+// Part III:
+function handleReset() {
+  const inputTextArea = document.getElementById("input-text");
+  inputTextArea.value = ""; // Clear out the input text area
+}
+window.addEventListener("load", function () {
+  const resetButton = document.getElementById("reset");
+  resetButton.addEventListener("click", handleReset);
+});
+// Part IV:
+function handleEncrypt() {
+  const inputText = document.getElementById("input-text").value;
+  const encryptedText = shiftCipher(inputText);
+  displayEncryptedText(encryptedText);
+}
+
 function shiftCipher(text) {
-  text = text.toLowerCase();
   let result = "";
+
   for (let i = 0; i < text.length; i++) {
-    if (text[i] < 'a' || text[i] > 'z') {
-      result += text[i];
-    } else if (text[i] === 'z') {
-      result += 'a';
-    } else { // letter is between 'a' and 'y'
-      let letter = text.charCodeAt(i);
-      let resultLetter = String.fromCharCode(letter + 1);
-      result += resultLetter;
+    let charCode = text.charCodeAt(i);
+
+    // Check if the character is a lowercase letter
+    if (charCode >= 97 && charCode <= 122) {
+      charCode = ((charCode - 97 + 1) % 26) + 97;
     }
+    // Check if the character is an uppercase letter
+    else if (charCode >= 65 && charCode <= 90) {
+      charCode = ((charCode - 65 + 1) % 26) + 65;
+    }
+
+    result += String.fromCharCode(charCode);
   }
+
   return result;
 }
 
-// Function to handle click on Encrypt-It! button
-function handleClick() {
-  const inputText = document.getElementById('input-text').value;
-  const encryptedText = shiftCipher(inputText);
-  document.getElementById('result').textContent = encryptedText;
+function displayEncryptedText(encryptedText) {
+  const resultArea = document.getElementById("result");
+  resultArea.textContent = encryptedText;
 }
 
-// Function to handle click on Reset button
-function handleReset() {
-  document.getElementById('input-text').value = ''; // Clear input textarea
-  document.getElementById('result').textContent = ''; // Clear result output
-}
-
-// Event listeners
-window.addEventListener('load', function() {
-  console.log("Window loaded!");
+window.addEventListener("load", function () {
+  const encryptButton = document.getElementById("encrypt-it");
+  encryptButton.addEventListener("click", handleEncrypt);
 });
-
-document.getElementById('encrypt-button').addEventListener('click', handleClick);
-document.getElementById('reset-button').addEventListener('click', handleReset);
