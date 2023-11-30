@@ -1,4 +1,3 @@
-<script>
 function new_function()
 {
 	document.getElementById("text_id").style.fontSize="2em"; 
@@ -26,4 +25,3 @@ function makeMoo() {
     }
     textInput.value = sentences.join(". ");
 }
-</script>
