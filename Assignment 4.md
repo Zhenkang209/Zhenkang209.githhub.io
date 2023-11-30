@@ -1,7 +1,6 @@
 
 <html>
 <head>
-    <title>Zhen's Anime list</title>
 </head>
 <body>
     <h1><strong>Anime</strong><h1>
