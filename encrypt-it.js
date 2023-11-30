@@ -14,7 +14,8 @@ function myFunction()
     {
     let offset=(i+n)%alphabet.length;
     newalpha+=alphabet[offset];
-}
+    }
+    }
 }
 </script>
 </head>
