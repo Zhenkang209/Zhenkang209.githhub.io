@@ -1,29 +1,38 @@
-console.log("Windows loaded!");
-<!DOCTYPE html>
-<html>
-<head>
-<script>
-function myFunction()
-{
-    document.getElementById("Windows Loaded!").innerHTML="Paragraph Changed.";
-    var alphabet = "abcdefghijklmnopqrstuvwxyz";
-    var newalpha="";
-    function shift(n)
-    {
-        for(let i-0;i<alphabet.length;i++)
-    {
-    let offset=(i+n)%alphabet.length;
-    newalpha+=alphabet[offset];
+// Function to handle encryption using shift cipher
+function shiftCipher(text) {
+  text = text.toLowerCase();
+  let result = "";
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] < 'a' || text[i] > 'z') {
+      result += text[i];
+    } else if (text[i] === 'z') {
+      result += 'a';
+    } else { // letter is between 'a' and 'y'
+      let letter = text.charCodeAt(i);
+      let resultLetter = String.fromCharCode(letter + 1);
+      result += resultLetter;
     }
-    }
+  }
+  return result;
 }
-</script>
-</head>
-<body>
-<h2> Javascript in head </h2>
-<p id="Windows Loaded"> A Paragraph</p>
-<button type="button" onclick="myFunction()">Tryit </button>
-</body>
-</html>
 
+// Function to handle click on Encrypt-It! button
+function handleClick() {
+  const inputText = document.getElementById('input-text').value;
+  const encryptedText = shiftCipher(inputText);
+  document.getElementById('result').textContent = encryptedText;
+}
 
+// Function to handle click on Reset button
+function handleReset() {
+  document.getElementById('input-text').value = ''; // Clear input textarea
+  document.getElementById('result').textContent = ''; // Clear result output
+}
+
+// Event listeners
+window.addEventListener('load', function() {
+  console.log("Window loaded!");
+});
+
+document.getElementById('encrypt-button').addEventListener('click', handleClick);
+document.getElementById('reset-button').addEventListener('click', handleReset);
