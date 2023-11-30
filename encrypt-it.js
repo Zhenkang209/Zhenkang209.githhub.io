@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
   }
 
   function shiftCipher(text) {
-  const shiftAmount = 3; // You can change this value to shift by a different amount
+  const shiftAmount = 3;
 
   let result = "";
   for (let i = 0; i < text.length; i++) {
