@@ -1,22 +1,40 @@
- <!DOCTYPE html> <html lang="en"> 
-	 <head> <meta charset="UTF-8">     
-		 <meta http-equiv="X-UA-Compatible" content="IE=edge">    
-		 <meta name="viewport" content="width=device-width, initial-scale=1.0">     
-		 <title>fancify my text</title> 
-	 </head> 
-	 	<style>     .container{display: flex;flex-direction: column;align-items: center;}     
-		 	fieldset{border: 5px solid gray; width: 50vw; text-align: center; margin: 25px; font-size: 20px;} 
-	 	</style> 
-	 <body><div class="container"><fieldset><legend>Text</legend>
-		 <textarea name="" id="textarea" cols="30" rows="4"></textarea>         
-	 </fieldset>         
-		 <fieldset>             
-			 <legend>fancify</legend>             
-			 <button onclick="makeBig()">Bigger!</button>             
-			 <input type="radio" name="fancify" id="fancy"> <label for="fancy">FancyShmancy</label>             
-			 <input type="radio" name="fancify" id="boring"><label for="boring">BoringBetty</label>             
-			 <button onclick="makeMoo()">Moo</button>         
-		 </fieldset>     </div> </body> <script src="fancifymytext.js"></script> 
+ <!DOCTYPE html>
+
+<html>
+<head>
+<script type="text/javascript" src="fancifymytext.js"></script>
+</head>
+<body>
+
+<!-- A field set box for users to enter text. -->
+
+<fieldset style="width: 500px;">
+<legend>Text</legend>
+<textarea rows="4" cols="30" id="text_id"></textarea>
+</fieldset>
+<br><br>
+
+<!-- A fieldset to put UI controls. -->
+
+<fieldset style="width: 500px;">
+<legend>Fancify</legend>
+
+<!-- Button -->
+
+<button onclick="new_function()">Bigger!</button><br><br>
+
+<!-- Radio buttons -->
+<input type="radio" name="r" value="FancyShmancy" id="fancy_radio_button" onchange="new_function()">FancyShmancy
+<input type="radio" name="r" value="BoringBetty" id="boring_radio_button" onchange="new_function()">BoringBetty
+</fieldset>
+<br>
+<br>
+
+<!-- Button to change the text of textfield to uppercase and adds a suffix "-Moo" to the last word of each sentence. -->
+
+<button onclick="moo()">Moo</button>
+</body>
+</html>
 	var textarea = document.getElementById("textarea"); 
 	function makeBig(){textarea.style.fontSize="24pt";} 
 	document.getElementsByName("fancify")[0].addEventListener("change",function(){textarea.style.fontWeight= "bold"; textarea.style.color= "blue"; textarea.style.textDecoration= "underline" alert("styles added to the text area"); })
